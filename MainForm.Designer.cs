@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             pictureBox1 = new PictureBox();
             argsTextBox = new TextBox();
             buttonStart = new Button();
@@ -40,32 +41,23 @@
             // pictureBox1
             // 
             pictureBox1.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox1.Location = new Point(12, 42);
+            resources.ApplyResources(pictureBox1, "pictureBox1");
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1024, 720);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // argsTextBox
             // 
             argsTextBox.BackColor = SystemColors.InactiveCaptionText;
             argsTextBox.ForeColor = SystemColors.ControlLight;
-            argsTextBox.Location = new Point(12, 13);
+            resources.ApplyResources(argsTextBox, "argsTextBox");
             argsTextBox.Name = "argsTextBox";
-            argsTextBox.Size = new Size(628, 23);
-            argsTextBox.TabIndex = 1;
-            argsTextBox.Text = "render_fps=25 compute_fps=200 first_gen_alive=25% spawn=3-3 live=2-3 scope=3x3 seed=0";
             // 
             // buttonStart
             // 
             buttonStart.BackColor = SystemColors.ActiveCaptionText;
             buttonStart.ForeColor = SystemColors.ControlLight;
-            buttonStart.Location = new Point(799, 11);
+            resources.ApplyResources(buttonStart, "buttonStart");
             buttonStart.Name = "buttonStart";
-            buttonStart.Size = new Size(75, 25);
-            buttonStart.TabIndex = 2;
-            buttonStart.Text = "start";
             buttonStart.UseVisualStyleBackColor = false;
             buttonStart.Click += buttonStartClick;
             // 
@@ -73,11 +65,8 @@
             // 
             buttonPause.BackColor = SystemColors.ActiveCaptionText;
             buttonPause.ForeColor = SystemColors.ControlLight;
-            buttonPause.Location = new Point(880, 11);
+            resources.ApplyResources(buttonPause, "buttonPause");
             buttonPause.Name = "buttonPause";
-            buttonPause.Size = new Size(75, 25);
-            buttonPause.TabIndex = 3;
-            buttonPause.Text = "pause";
             buttonPause.UseVisualStyleBackColor = false;
             buttonPause.Click += buttonPauseClick;
             // 
@@ -85,11 +74,8 @@
             // 
             buttonStop.BackColor = SystemColors.ActiveCaptionText;
             buttonStop.ForeColor = SystemColors.ControlLight;
-            buttonStop.Location = new Point(961, 11);
+            resources.ApplyResources(buttonStop, "buttonStop");
             buttonStop.Name = "buttonStop";
-            buttonStop.Size = new Size(75, 25);
-            buttonStop.TabIndex = 4;
-            buttonStop.Text = "stop";
             buttonStop.UseVisualStyleBackColor = false;
             buttonStop.Click += buttonStopClick;
             // 
@@ -97,20 +83,15 @@
             // 
             label.BackColor = SystemColors.InactiveCaptionText;
             label.ForeColor = SystemColors.ControlLight;
-            label.Location = new Point(646, 13);
+            resources.ApplyResources(label, "label");
             label.Name = "label";
             label.ReadOnly = true;
-            label.Size = new Size(147, 23);
-            label.TabIndex = 5;
-            label.Text = "seed: ";
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(1041, 769);
             Controls.Add(label);
             Controls.Add(buttonStop);
             Controls.Add(buttonPause);
@@ -119,7 +100,6 @@
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "MainForm";
-            Text = "ConwayGameOfLife";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
