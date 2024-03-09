@@ -156,7 +156,7 @@
     <value>1</value>
   </data>
   <data name="argsTextBox.Text" xml:space="preserve">
-    <value>render_fps=25 compute_fps=100 first_gen_alive=25% spawn=3-3 live=2-3 scope=3x3 seed=0</value>
+    <value>render_fps=25 compute_fps=100 first_gen_alive=50% spawn=3-3 live=2-3 scope=3x3 seed=0</value>
   </data>
   <data name="&gt;&gt;argsTextBox.Name" xml:space="preserve">
     <value>argsTextBox</value>
