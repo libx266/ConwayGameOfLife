@@ -34,7 +34,7 @@
             buttonStart = new Button();
             buttonPause = new Button();
             buttonStop = new Button();
-            label = new TextBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -48,15 +48,15 @@
             // argsTextBox
             // 
             argsTextBox.BackColor = SystemColors.InactiveCaptionText;
-            argsTextBox.ForeColor = SystemColors.ControlLight;
             resources.ApplyResources(argsTextBox, "argsTextBox");
+            argsTextBox.ForeColor = SystemColors.ControlLight;
             argsTextBox.Name = "argsTextBox";
             // 
             // buttonStart
             // 
             buttonStart.BackColor = SystemColors.ActiveCaptionText;
-            buttonStart.ForeColor = SystemColors.ControlLight;
             resources.ApplyResources(buttonStart, "buttonStart");
+            buttonStart.ForeColor = SystemColors.ControlLight;
             buttonStart.Name = "buttonStart";
             buttonStart.UseVisualStyleBackColor = false;
             buttonStart.Click += buttonStartClick;
@@ -64,8 +64,8 @@
             // buttonPause
             // 
             buttonPause.BackColor = SystemColors.ActiveCaptionText;
-            buttonPause.ForeColor = SystemColors.ControlLight;
             resources.ApplyResources(buttonPause, "buttonPause");
+            buttonPause.ForeColor = SystemColors.ControlLight;
             buttonPause.Name = "buttonPause";
             buttonPause.UseVisualStyleBackColor = false;
             buttonPause.Click += buttonPauseClick;
@@ -73,26 +73,25 @@
             // buttonStop
             // 
             buttonStop.BackColor = SystemColors.ActiveCaptionText;
-            buttonStop.ForeColor = SystemColors.ControlLight;
             resources.ApplyResources(buttonStop, "buttonStop");
+            buttonStop.ForeColor = SystemColors.ControlLight;
             buttonStop.Name = "buttonStop";
             buttonStop.UseVisualStyleBackColor = false;
             buttonStop.Click += buttonStopClick;
             // 
-            // label
+            // label1
             // 
-            label.BackColor = SystemColors.InactiveCaptionText;
-            label.ForeColor = SystemColors.ControlLight;
-            resources.ApplyResources(label, "label");
-            label.Name = "label";
-            label.ReadOnly = true;
+            resources.ApplyResources(label1, "label1");
+            label1.BorderStyle = BorderStyle.Fixed3D;
+            label1.ForeColor = SystemColors.Control;
+            label1.Name = "label1";
             // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            Controls.Add(label);
+            Controls.Add(label1);
             Controls.Add(buttonStop);
             Controls.Add(buttonPause);
             Controls.Add(buttonStart);
@@ -100,6 +99,7 @@
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "MainForm";
+            Load += MainForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -112,6 +112,6 @@
         private Button buttonStart;
         private Button buttonPause;
         private Button buttonStop;
-        private TextBox label;
+        private Label label1;
     }
 }

@@ -15,6 +15,8 @@ namespace ConwayGameOfLife
     {
         public readonly ConwayConfig Config;
         private readonly byte[,] _dots;
+        private bool rendering = false;
+        private int _population;
 
 
         public ConwayFrame(ConwayConfig config)
@@ -63,7 +65,7 @@ namespace ConwayGameOfLife
         }
 
 
-        public async Task<ConwayFrame> Next()
+        public async Task<(ConwayFrame, int)> Next()
         {
             var newDots = new byte[Config.Size.Width, Config.Size.Height];
             var sem = new SemaphoreSlim(Environment.ProcessorCount - 1);
@@ -74,16 +76,23 @@ namespace ConwayGameOfLife
 
                 for (int x = 0; x < Config.Size.Width; x++)
                 {
+                    while (rendering)
+                    {
+                        await Task.Delay(1);
+                    }
+
                     int aliveCount = GetScope(x, y).Count(d => Convert.ToBoolean(d));
                     bool currentAlive = Convert.ToBoolean(_dots[x, y]);
 
                     if (!currentAlive && (aliveCount >= Config.SpawnMin && aliveCount <= Config.SpawnMax))
                     {
                         newDots[x, y] = 1;
+                        _population++;
                     }
                     else if (currentAlive && (aliveCount >= Config.LiveMin && aliveCount <= Config.LiveMax))
                     {
                         newDots[x, y] = 1;
+                        _population++;
                     }
                     else
                     {
@@ -94,12 +103,14 @@ namespace ConwayGameOfLife
                 sem.Release();
             })));
 
-            return new ConwayFrame(newDots, Config);
+            return (new ConwayFrame(newDots, Config), _population);
         }
 
 
-        public DirectBitmap Render(Color background, Color foreground)
+        public DirectBitmap Render()
         {
+            rendering = true;
+
             var reult = new DirectBitmap(Config.Size.Width, Config.Size.Height);
 
             var c = new byte[2, 2];
@@ -151,6 +162,8 @@ namespace ConwayGameOfLife
                     );
                 }
             }
+
+            rendering = false;
 
             return reult;
         }
