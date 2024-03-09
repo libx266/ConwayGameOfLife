@@ -14,7 +14,7 @@ namespace ConwayGameOfLife
         byte LiveMax,
         byte ScopeWidth,
         byte ScopeHeight,
-        ushort Seed,
+        int Seed,
         float FirstGenAlive,
         Size Size
     );

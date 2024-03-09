@@ -21,7 +21,7 @@ namespace ConwayGameOfLife
         {
             _dots = new byte[config.Size.Width, config.Size.Height];
 
-            var r = new Random(Convert.ToBoolean(config.Seed) ? config.Seed : Random.Shared.Next());
+            var r = new Random(config.Seed);
             for (int y = 0; y < config.Size.Height; y++)
             {
                 for (int x = 0; x < config.Size.Width; x++)

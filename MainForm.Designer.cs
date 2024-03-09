@@ -53,7 +53,7 @@
             argsTextBox.ForeColor = SystemColors.ControlLight;
             argsTextBox.Location = new Point(12, 13);
             argsTextBox.Name = "argsTextBox";
-            argsTextBox.Size = new Size(569, 23);
+            argsTextBox.Size = new Size(628, 23);
             argsTextBox.TabIndex = 1;
             argsTextBox.Text = "render_fps=25 compute_fps=200 first_gen_alive=25% spawn=3-3 live=2-3 scope=3x3 seed=0";
             // 
@@ -97,12 +97,12 @@
             // 
             label.BackColor = SystemColors.InactiveCaptionText;
             label.ForeColor = SystemColors.ControlLight;
-            label.Location = new Point(596, 13);
+            label.Location = new Point(646, 13);
             label.Name = "label";
             label.ReadOnly = true;
-            label.Size = new Size(190, 23);
+            label.Size = new Size(147, 23);
             label.TabIndex = 5;
-            label.Text = "Wszechobecny Jodladymuzywac";
+            label.Text = "seed: ";
             // 
             // MainForm
             // 

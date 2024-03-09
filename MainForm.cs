@@ -34,6 +34,8 @@ namespace ConwayGameOfLife
 
         private async Task loop(double renderPeriod, double computePeriod)
         {
+            enable = false;
+            await Task.Delay(TimeSpan.FromSeconds(renderPeriod) + TimeSpan.FromMilliseconds(2));
             enable = true;
 
             var render = Task.Run(async () =>
@@ -84,6 +86,13 @@ namespace ConwayGameOfLife
             var spawn = split("spawn", '-');
             var live = split("live", '-');
             var scope = split("scope", 'x');
+            var seed = Convert.ToInt32(args["seed"]);
+
+            if (!Convert.ToBoolean(seed))
+            {
+                seed = Random.Shared.Next(Int32.MinValue, Int32.MaxValue);
+            }
+            label.Text = $"seed:  " + seed;
 
             currentFrame ??= new ConwayFrame(new ConwayConfig
             (
@@ -93,7 +102,7 @@ namespace ConwayGameOfLife
                 live.Item2,
                 scope.Item1,
                 scope.Item2,
-                Convert.ToUInt16(args["seed"]),
+                seed,
                 Convert.ToSingle(args["first_gen_alive"].Split('%').First()) / 100f,
                 new Size(pictureBox1.Width / 2, pictureBox1.Height / 2)
             ));
