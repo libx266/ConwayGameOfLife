@@ -122,10 +122,10 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 52</value>
+    <value>12, 46</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1536, 1024</value>
+    <value>1536, 960</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
@@ -147,7 +147,7 @@
     <value>Segoe UI, 11pt, style=Bold</value>
   </data>
   <data name="argsTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
+    <value>12, 9</value>
   </data>
   <data name="argsTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>819, 27</value>
@@ -174,7 +174,7 @@
     <value>Segoe UI, 11pt, style=Bold</value>
   </data>
   <data name="buttonStart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1310, 11</value>
+    <value>1310, 8</value>
   </data>
   <data name="buttonStart.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 30</value>
@@ -201,7 +201,7 @@
     <value>Segoe UI, 11pt, style=Bold</value>
   </data>
   <data name="buttonPause.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1391, 10</value>
+    <value>1391, 7</value>
   </data>
   <data name="buttonPause.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 30</value>
@@ -228,7 +228,7 @@
     <value>Segoe UI, 11pt, style=Bold</value>
   </data>
   <data name="buttonStop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1472, 11</value>
+    <value>1472, 8</value>
   </data>
   <data name="buttonStop.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 30</value>
@@ -258,7 +258,7 @@
     <value>Segoe UI, 12pt</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>853, 14</value>
+    <value>853, 11</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>307, 23</value>
@@ -295,7 +295,7 @@
     <value>None</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1560, 1087</value>
+    <value>1560, 1017</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ConwayGameOfLife</value>
