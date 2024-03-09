@@ -38,7 +38,7 @@ namespace ConwayGameOfLife
 
         private void updateLabel()
         {
-            string text = $"map:  1536x1024  seed:  {seed}   population:  {population}";
+            string text = $"map:  1536x960  seed:  {seed}   population:  {population}";
 
             if (label1.InvokeRequired)
             {
