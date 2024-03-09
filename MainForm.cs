@@ -88,11 +88,15 @@ namespace ConwayGameOfLife
             var scope = split("scope", 'x');
             var seed = Convert.ToInt32(args["seed"]);
 
-            if (!Convert.ToBoolean(seed))
+            var createSeed = () =>
             {
-                seed = Random.Shared.Next(Int32.MinValue, Int32.MaxValue);
-            }
-            label.Text = $"seed:  " + seed;
+                if (!Convert.ToBoolean(seed))
+                {
+                    seed = Random.Shared.Next(Int32.MinValue, Int32.MaxValue);
+                }
+                label.Text = $"seed:  " + seed;
+                return seed;
+            };
 
             currentFrame ??= new ConwayFrame(new ConwayConfig
             (
@@ -102,7 +106,7 @@ namespace ConwayGameOfLife
                 live.Item2,
                 scope.Item1,
                 scope.Item2,
-                seed,
+                createSeed(),
                 Convert.ToSingle(args["first_gen_alive"].Split('%').First()) / 100f,
                 new Size(pictureBox1.Width / 2, pictureBox1.Height / 2)
             ));
